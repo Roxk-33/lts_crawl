@@ -2,13 +2,13 @@ module.exports = {
 
     // data : {
         //科研简讯
-        // information : {
+        information : {
             sql : 'insert into articles SET ?',
             class : '31',
             type : '1',
             page : '33',
             sort : 'information',
-        // },
+        },
 
         //媒体报道
         information : {
@@ -20,21 +20,21 @@ module.exports = {
             
         },
         //著作
-        achievement : {
+        // achievement : {
             sql : 'insert into articles SET ?',
             class : '34',
             type : '1',
             page : '3',
-            sort : 'achievement'
+            sort : 'achievement',
             
-        },
+        // },
        //学术论文
         achievement : {
             sql : 'insert into articles set ?',
             class : '33',
             type : '2',
             page : '5',
-            sort : 'achievement'
+            sort : 'achievement',
             
         },
         //研究报告
@@ -43,7 +43,7 @@ module.exports = {
             class : '11',
             type : '3',
             page : '6',
-            sort : 'achievement'
+            sort : 'achievement',
             
         },
       
@@ -53,7 +53,7 @@ module.exports = {
             class : '2',
             type : '1',
             page : '6',
-            sort : 'research'
+            sort : 'research',
             
         },
         //调研考察
@@ -64,7 +64,7 @@ module.exports = {
             class : '36',
             type : '1',
             page : '4',
-            sort : 'exchange'
+            sort : 'exchange',
             
         },
         //流通论坛
@@ -73,7 +73,7 @@ module.exports = {
             class : '35',
             type : '2',
             page : '4',
-            sort : 'exchange'
+            sort : 'exchange',
         },
         //来访交流
         

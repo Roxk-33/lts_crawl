@@ -16,7 +16,7 @@ module.exports = {
                 class : '28',
                 type : '2',
                 page : '31',
-                sort : 'information'
+                sort : 'information',
                 
             },
             //著作
@@ -25,7 +25,7 @@ module.exports = {
                 class : '34',
                 type : '1',
                 page : '3',
-                sort : 'achievement'
+                sort : 'achievement',
                 
             },
            //学术论文
@@ -34,7 +34,7 @@ module.exports = {
                 class : '33',
                 type : '2',
                 page : '5',
-                sort : 'achievement'
+                sort : 'achievement',
                 
             },
             //研究报告
@@ -43,7 +43,7 @@ module.exports = {
                 class : '11',
                 type : '3',
                 page : '6',
-                sort : 'achievement'
+                sort : 'achievement',
                 
             },
           
@@ -53,7 +53,7 @@ module.exports = {
                 class : '2',
                 type : '1',
                 page : '6',
-                sort : 'research'
+                sort : 'research',
                 
             },
             //调研考察
@@ -64,7 +64,7 @@ module.exports = {
                 class : '36',
                 type : '1',
                 page : '4',
-                sort : 'exchange'
+                sort : 'exchange',
                 
             },
             //流通论坛
@@ -73,7 +73,7 @@ module.exports = {
                 class : '35',
                 type : '2',
                 page : '4',
-                sort : 'exchange'
+                sort : 'exchange',
             },
             //来访交流
             
