@@ -9,14 +9,18 @@ const downImg = require("./downImg");
 
 const getImg = async content => {
   const patt = /<img [^>]*src=['"]([^'"]+)[^>]*>/gi;
-
+  const patt1 = new RegExp('file:///C:');
+  const patt2 = new RegExp('http');
+  content = content.replace('oldsrc','old');
   if (patt.test(content)) {
     content = await content.replace(patt, (match, capture) => {
-    //   capture = capture.replace('www.kesum.cn','');  
+    
       path ="/images/uploadImg/" +(parseInt(Date.now()) + Math.ceil(Math.random() * 10)) +".png";
       //图片不存在，替换成这个
       let onerror = "/images/error.jpg";
-      let result = '<img src="' + path + '" style="width:400px;" onerror="this.src=\''+onerror+'\'">';
+      let result = '<img onerror="this.src=\''+onerror+'\'" src="' + path + '" style="width:400px;" >';
+      
+      if(patt1.test(capture)||!patt2.test(capture)) return '';
       downImg(capture, "/Users/hao/Desktop/lts_node/static" + path)
         
       return result;
@@ -25,6 +29,7 @@ const getImg = async content => {
   return content;
 };
 async function getURL(classId, page) {
+
   let aList = [];
   while (page > 0) {
     const resp = await crawl(config.catalog, { ClassID: classId, page }).catch(
@@ -120,27 +125,29 @@ async function getDate(article, type, sql, sort) {
  * @param {*} url 访问的路径
  * @param {*} type 需要爬的栏目ID
  */
-// async function startCrawl (sql,classId,page,type,sort){
-//     const aList = await getURL(classId,page);
-//     const LENGTH = aList.length;
-//     let done = 1;
-//     for(let i = 0; i < LENGTH;i++){
-//         let resp = await crawl(config.content, {ArticleID : aList[i]}).catch(e=>{
-//             throw e;
-//         });
-//         await getDate(resp.text,type,sql,sort);
-//         console.log(`已经爬了${done}条数据`);
-//         done++;
-//     }
-//     console.log("OK!")
+async function startCrawl (sql,classId,page,type,sort){
+    const aList = await getURL(classId,page);
+    const LENGTH = aList.length;
+    let done = 1;
+    for(let i = 0; i < LENGTH;i++){
+         
+        console.log(aList[i])
+        let resp = await crawl(config.content, {ArticleID : aList[i]}).catch(e=>{
+            throw e;
+        });
+        await getDate(resp.text,type,sql,sort);
+        console.log(`已经爬了${done}条数据`);
+        done++;
+    }
+    console.log("OK!")
 
-// }
-async function startCrawl(sql, classId, page, type, sort) {
-  let resp = await crawl(config.content, { ArticleID: 305 }).catch(e => {
-    throw e;
-  });
-  let content = resp.text;
-
-  await getDate(content, type, sql, sort);
 }
+// async function startCrawl(sql, classId, page, type, sort) {
+//   let resp = await crawl(config.content, { ArticleID:1274 }).catch(e => {
+//     throw e;
+//   });
+//   let content = resp.text;
+
+//   await getDate(content, type, sql, sort);
+// }
 module.exports = startCrawl;
