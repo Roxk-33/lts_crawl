@@ -22,12 +22,13 @@ module.exports = (url, path) => {
       
     }
   };
-
   return new Promise((resolve, reject) => {
-    request(options).pipe(fs.createWriteStream(path)).on("close", () => {
+    request(options).on('error', function(err) {
+      reject(err)
+    }).pipe(fs.createWriteStream(path)).on("close", () => {
       // 生成本地图片文件获取实际尺寸
       console.log(path + " 图片下载成功");
-      resolve();
+      resolve('<img src="'+path+'" style="width:400px;">');
     });
   });
 }
