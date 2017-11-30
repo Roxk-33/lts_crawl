@@ -131,7 +131,6 @@ async function startCrawl (sql,classId,page,type,sort){
     let done = 1;
     for(let i = 0; i < LENGTH;i++){
          
-        console.log(aList[i])
         let resp = await crawl(config.content, {ArticleID : aList[i]}).catch(e=>{
             throw e;
         });
@@ -142,12 +141,12 @@ async function startCrawl (sql,classId,page,type,sort){
     console.log("OK!")
 
 }
-// async function startCrawl(sql, classId, page, type, sort) {
-//   let resp = await crawl(config.content, { ArticleID:1274 }).catch(e => {
-//     throw e;
-//   });
-//   let content = resp.text;
+async function startCrawll(sql, classId, page, type, sort) {
+  let resp = await crawl(config.content, { ArticleID:35 }).catch(e => {
+    throw e;
+  });
+  let content = resp.text;
 
-//   await getDate(content, type, sql, sort);
-// }
+  await getDate(content, type, sql, sort);
+}
 module.exports = startCrawl;

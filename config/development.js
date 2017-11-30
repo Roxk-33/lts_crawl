@@ -1,17 +1,17 @@
 module.exports = {
     
-        // data : {
-            //科研简讯
-            // information : {
+        data : [
+            //科研简讯0
+             {
                 sql : 'insert into articles SET ?',
                 class : '31',
                 type : '1',
                 page : '33',
                 sort : 'information',
-            // },
+            },
     
-            //媒体报道
-            information : {
+            //媒体报道1
+             {
                 sql : 'insert into articles SET ?',
                 class : '28',
                 type : '2',
@@ -19,8 +19,8 @@ module.exports = {
                 sort : 'information',
                 
             },
-            //著作
-            achievement : {
+            //著作2
+             {
                 sql : 'insert into articles SET ?',
                 class : '34',
                 type : '1',
@@ -28,8 +28,8 @@ module.exports = {
                 sort : 'achievement',
                 
             },
-           //学术论文
-            achievement : {
+           //学术论文3
+             {
                 sql : 'insert into articles set ?',
                 class : '33',
                 type : '2',
@@ -37,8 +37,8 @@ module.exports = {
                 sort : 'achievement',
                 
             },
-            //研究报告
-            achievement : {
+            //研究报告4
+            {
                 sql : 'insert into articles SET ?',
                 class : '11',
                 type : '3',
@@ -47,8 +47,8 @@ module.exports = {
                 
             },
           
-            //课题研究
-              research : {
+            //课题研究5
+              {
                 sql : 'insert into articles SET ?',
                 class : '2',
                 type : '1',
@@ -56,10 +56,10 @@ module.exports = {
                 sort : 'research',
                 
             },
-            //调研考察
+           
     
-            //学术年会
-            exchange : {
+            //学术年会6
+             {
                 sql : 'insert into articles SET ?',
                 class : '36',
                 type : '1',
@@ -67,8 +67,8 @@ module.exports = {
                 sort : 'exchange',
                 
             },
-            //流通论坛
-            exchange : {
+            //流通论坛7
+             {
                 sql : 'insert into articles SET ?',
                 class : '35',
                 type : '2',
@@ -78,7 +78,7 @@ module.exports = {
             //来访交流
             
            
-        // },
+        ],
        
         catalog : 'http://lts.gdufe.edu.cn/Article/ShowClass.asp',
         content : 'http://lts.gdufe.edu.cn/Article/ShowArticle.asp',
